@@ -1,5 +1,5 @@
 do
--- #Begin plugins.lua by @BeyondTeam
+-- #Begin plugins.lua by @OctaCH
 -- Returns the key (index) in the config.enabled_plugins table
 local function plugin_enabled( name )
   for k,v in pairs(_config.enabled_plugins) do
@@ -22,7 +22,7 @@ local function plugin_exists( name )
 end
 
 local function list_all_plugins(only_enabled, msg)
-  local tmp = '\n\n@BeyondTeam'
+  local tmp = '\n\n@OctaCH'
   local text = ''
   local nsum = 0
   for k, v in pairs( plugins_names( )) do
@@ -68,7 +68,7 @@ local function list_plugins(only_enabled, msg)
      -- text = text..v..'  '..status..'\n'
     end
   end
-  text = "\n_🔃All Plugins Reloaded_\n\n"..nact.." *✔️Plugins Enabled*\n"..nsum.." *📂Plugins Installed*\n\n@BeyondTeam"
+  text = "\n*♻️ All Plugins Reloaded*\n\n"..nact.." *✔️Plugins Enabled*\n"..nsum.." *📂Plugins Installed*\n\n@OctaCH"
   tdcli.sendMessage(msg.to.id, msg.id_, 1, text, 1, 'md')
 end
 

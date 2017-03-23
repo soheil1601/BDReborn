@@ -32,23 +32,23 @@ function print_logo() {
 	echo -e "\n\e[36m"
 }
 
-function logo_play() {
-    declare -A txtlogo
-    seconds="0.010"
-    txtlogo[1]=" ____  ____     _____"
-    txtlogo[2]="|  _ )|  _ \   |_   _|___ ____   __  __"
-    txtlogo[3]="|  _ \| |_) )    | |/ .__|  _ \_|  \/  |"
-    txtlogo[4]="|____/|____/     |_|\____/\_____|_/\/\_|"
-    printf "\033[38;5;600m\t"
-    for i in ${!txtlogo[@]}; do
-        for x in `seq 0 ${#txtlogo[$i]}`; do
-            printf "${txtlogo[$i]:$x:1}"
-            sleep $seconds
-        done
-        printf "\n\t"
-    done
-    printf "\n"
-}
+#function logo_play() {
+#    declare -A txtlogo
+ #   seconds="0.010"
+#    txtlogo[1]=" ____  ____     _____"
+#    txtlogo[2]="|  _ )|  _ \   |_   _|___ ____   __  __"
+#    txtlogo[3]="|  _ \| |_) )    | |/ .__|  _ \_|  \/  |"
+ #   txtlogo[4]="|____/|____/     |_|\____/\_____|_/\/\_|"
+  #  printf "\033[38;5;600m\t"
+   # for i in ${!txtlogo[@]}; do
+    #    for x in `seq 0 ${#txtlogo[$i]}`; do
+     #       printf "${txtlogo[$i]:$x:1}"
+      #      sleep $seconds
+       # done
+    #    printf "\n\t"
+   # done
+   # printf "\n"
+# }
 
 if [ "$1" = "install" ]; then
   install

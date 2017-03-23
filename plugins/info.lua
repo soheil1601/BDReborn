@@ -29,27 +29,26 @@ local function info_cb(arg, data)
   lastname = ""
   end
 	local hash = 'rank:'..arg.chat_id..':variables'
-   local text = "_First name :_ *"..firstname.."*\n_Last name :_ *"..lastname.."*\n_Username :_ "..username.."\n_ID :_ *"..data.id_.."*\n\n"
+   local text = "*First name :*"..firstname.."*\nLast name :* "..lastname.."*\nUsername : *"..username.."\n*ID : *`"..data.id_.."`\n\n"
 		    if data.id_ == tonumber(Solid) then
-		       text = text..'_Rank :_ *Executive Admin*\n\n'
+		       text = text..'*Rank :* Executive Admin\n\n'
 			   elseif is_sudo1(data.id_) then
-	           text = text..'_Rank :_ *Full Access Admin*\n\n'
+	           text = text..'*Rank : *Full Access Admin\n\n'
 		     elseif is_admin1(data.id_) then
-		       text = text..'_Rank :_ *Bot Admin*\n\n'
+		       text = text..'*Rank : *Bot Admin\n\n'
 		     elseif is_owner1(arg.chat_id, data.id_) then
-		       text = text..'_Rank :_ *Group Owner*\n\n'
+		       text = text..'*Rank : *Group Owner\n\n'
 		     elseif is_mod1(arg.chat_id, data.id_) then
-		       text = text..'_Rank :_ *Group Moderator*\n\n'
+		       text = text..'*Rank : *Group Moderator\n\n'
 		 else
-		       text = text..'_Rank :_ *Group Member*\n\n'
+		       text = text..'*Rank : *Group Member\n\n'
 			end
          local user_info = {} 
   local uhash = 'user:'..data.id_
   local user = redis:hgetall(uhash)
   local um_hash = 'msgs:'..data.id_..':'..arg.chat_id
   user_info_msgs = tonumber(redis:get(um_hash) or 0)
-  text = text..'Total messages : '..user_info_msgs..'\n\n'
-  text = text..'@BeyondTeam'
+  text = text..'*Total messages :* `'..user_info_msgs..'`\n\n'
   tdcli.sendMessage(arg.chat_id, arg.msgid, 0, text, 0, "md")
 end
 tdcli_function ({
@@ -79,27 +78,26 @@ local function info_by_username(arg, data)
   lastname = ""
   end
 	local hash = 'rank:'..arg.chat_id..':variables'
-   local text = "_First name :_ *"..firstname.."*\n_Last name :_ *"..lastname.."*\n_Username :_ "..username.."\n_ID :_ *"..data.id_.."*\n\n"
+   local text = "*First name :*"..firstname.."*\nLast name :* "..lastname.."*\nUsername : *"..username.."\n*ID : *`"..data.id_.."`\n\n"
 		    if data.id_ == tonumber(Solid) then
-		       text = text..'_Rank :_ *Executive Admin*\n\n'
+		       text = text..'*Rank :* Executive Admin\n\n'
 			   elseif is_sudo1(data.id_) then
-	           text = text..'_Rank :_ *Full Access Admin*\n\n'
+	           text = text..'*Rank : *Full Access Admin\n\n'
 		     elseif is_admin1(data.id_) then
-		       text = text..'_Rank :_ *Bot Admin*\n\n'
+		       text = text..'*Rank : *Bot Admin\n\n'
 		     elseif is_owner1(arg.chat_id, data.id_) then
-		       text = text..'_Rank :_ *Group Owner*\n\n'
+		       text = text..'*Rank : *Group Owner\n\n'
 		     elseif is_mod1(arg.chat_id, data.id_) then
-		       text = text..'_Rank :_ *Group Moderator*\n\n'
+		       text = text..'*Rank : *Group Moderator\n\n'
 		 else
-		       text = text..'_Rank :_ *Group Member*\n\n'
+		       text = text..'*Rank : *Group Member\n\n'
 			end
          local user_info = {} 
   local uhash = 'user:'..data.id_
   local user = redis:hgetall(uhash)
   local um_hash = 'msgs:'..data.id_..':'..arg.chat_id
   user_info_msgs = tonumber(redis:get(um_hash) or 0)
-  text = text..'Total messages : '..user_info_msgs..'\n\n'
-  text = text..'@BeyondTeam'
+  text = text..'*Total messages :* `'..user_info_msgs..'`\n\n'
   tdcli.sendMessage(arg.chat_id, arg.msgid, 0, text, 0, "md")
    else
    tdcli.sendMessage(arg.chat_id, "", 0, "*User not found*", 0, "md")
@@ -124,27 +122,26 @@ local function info_by_id(arg, data)
   lastname = ""
   end
 	local hash = 'rank:'..arg.chat_id..':variables'
-   local text = "_First name :_ *"..firstname.."*\n_Last name :_ *"..lastname.."*\n_Username :_ "..username.."\n_ID :_ *"..data.id_.."*\n\n"
+   local text = "*First name :*"..firstname.."*\nLast name :* "..lastname.."*\nUsername : *"..username.."\n*ID : *`"..data.id_.."`\n\n"
 		    if data.id_ == tonumber(Solid) then
-		       text = text..'_Rank :_ *Executive Admin*\n\n'
+		       text = text..'*Rank :* Executive Admin\n\n'
 			   elseif is_sudo1(data.id_) then
-	           text = text..'_Rank :_ *Full Access Admin*\n\n'
+	           text = text..'*Rank : *Full Access Admin\n\n'
 		     elseif is_admin1(data.id_) then
-		       text = text..'_Rank :_ *Bot Admin*\n\n'
+		       text = text..'*Rank : *Bot Admin\n\n'
 		     elseif is_owner1(arg.chat_id, data.id_) then
-		       text = text..'_Rank :_ *Group Owner*\n\n'
+		       text = text..'*Rank : *Group Owner\n\n'
 		     elseif is_mod1(arg.chat_id, data.id_) then
-		       text = text..'_Rank :_ *Group Moderator*\n\n'
+		       text = text..'*Rank : *Group Moderator\n\n'
 		 else
-		       text = text..'_Rank :_ *Group Member*\n\n'
+		       text = text..'*Rank : *Group Member\n\n'
 			end
          local user_info = {} 
   local uhash = 'user:'..data.id_
   local user = redis:hgetall(uhash)
   local um_hash = 'msgs:'..data.id_..':'..arg.chat_id
   user_info_msgs = tonumber(redis:get(um_hash) or 0)
-  text = text..'Total messages : '..user_info_msgs..'\n\n'
-  text = text..'@BeyondTeam'
+  text = text..'*Total messages :* `'..user_info_msgs..'`\n\n'
   tdcli.sendMessage(arg.chat_id, arg.msgid, 0, text, 0, "md")
    else
    tdcli.sendMessage(arg.chat_id, "", 0, "*User not found*", 0, "md")
@@ -195,27 +192,26 @@ local function info2_cb(arg, data)
   lastname = ""
   end
 	local hash = 'rank:'..arg.chat_id..':variables'
-   local text = "_First name :_ *"..firstname.."*\n_Last name :_ *"..lastname.."*\n_Username :_ "..username.."\n_ID :_ *"..data.id_.."*\n\n"
+   local text = "*First name :*"..firstname.."*\nLast name :* "..lastname.."*\nUsername : *"..username.."\n*ID : *`"..data.id_.."`\n\n"
 		    if data.id_ == tonumber(Solid) then
-		       text = text..'_Rank :_ *Executive Admin*\n\n'
+		       text = text..'*Rank :* Executive Admin\n\n'
 			   elseif is_sudo1(data.id_) then
-	           text = text..'_Rank :_ *Full Access Admin*\n\n'
+	           text = text..'*Rank : *Full Access Admin\n\n'
 		     elseif is_admin1(data.id_) then
-		       text = text..'_Rank :_ *Bot Admin*\n\n'
+		       text = text..'*Rank : *Bot Admin\n\n'
 		     elseif is_owner1(arg.chat_id, data.id_) then
-		       text = text..'_Rank :_ *Group Owner*\n\n'
+		       text = text..'*Rank : *Group Owner\n\n'
 		     elseif is_mod1(arg.chat_id, data.id_) then
-		       text = text..'_Rank :_ *Group Moderator*\n\n'
+		       text = text..'*Rank : *Group Moderator\n\n'
 		 else
-		       text = text..'_Rank :_ *Group Member*\n\n'
-		 end
+		       text = text..'*Rank : *Group Member\n\n'
+			end
          local user_info = {} 
   local uhash = 'user:'..data.id_
   local user = redis:hgetall(uhash)
   local um_hash = 'msgs:'..data.id_..':'..arg.chat_id
   user_info_msgs = tonumber(redis:get(um_hash) or 0)
-  text = text..'Total messages : '..user_info_msgs..'\n\n'
-  text = text..'@BeyondTeam'
+  text = text..'*Total messages :* `'..user_info_msgs..'`\n\n'
   tdcli.sendMessage(arg.chat_id, arg.msgid, 0, text, 0, "md")
    end
 end
