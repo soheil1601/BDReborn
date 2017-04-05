@@ -1,8 +1,16 @@
 do local _ = {
   admins = {
     {
-      303821291,
-      "@OctaB"
+      347195628,
+      "@AtenaSxi"
+    },
+    {
+      308037857,
+      "@MahsaaKha"
+    },
+    {
+      324038987,
+      "@Asaljon793"
     }
   },
   disabled_channels = {},
@@ -21,9 +29,10 @@ do local _ = {
     "addkick",
     "mute_time",
     "share",
-    "monshi"
+    "monshi",
+    "lock_fosh"
   },
-  info_text = "》Beyond Reborn v4.0\nAn advanced administration bot based on https://valtman.name/telegram-cli\n\n》https://github.com/BeyondTeam/BDReborn \n\n》Admins :\n》@SoLiD ➣ Founder & Developer《\n》@Makan ➣ Developer《\n》@Rixel ➣ Developer 《\n》@Exacute ➣ Developer《\n》@To0fan ➣ Developer《\n》@CiveY ➣ Developer\n》@ArmanDev ➣ Manager《\n》@MrPars ➣ Manager《\n\n》Special thanks to :\n》@Vysheng\n》@MrHalix\n》@K_a_I_i_I_i_n_u_x\n》@Nero_Dev\n》And Beyond Team Members\n\n》Our channel :\n》@BeyondTeam《\n\n》Our website :\n》http://BeyondTeam.ir\n",
+  info_text = "",
   moderation = {
     data = "./data/moderation.json"
   },

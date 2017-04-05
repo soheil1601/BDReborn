@@ -541,7 +541,7 @@ local hash = "gp_lang:"..chat_id
 local lang = redis:get(hash)
     local data = load_data(_config.moderation.data)
     local i = 1
-  if not data[tostring(msg.chat_id_)] then
+  if not data[tostring(chat_id)] then
   if not lang then
     return '_Group is not added_'
 else
@@ -551,7 +551,7 @@ else
   -- determine if table is empty
   if next(data[tostring(chat_id)]['banned']) == nil then --fix way
      if not lang then
-					return "_No_ *banned* _users in this group_"
+					return "*No banned users in this group*"
    else
 					return "*هیچ کاربری از این گروه محروم نشده*"
               end
@@ -562,7 +562,7 @@ else
    message = '_لیست کاربران محروم شده از گروه :_\n'
      end
   for k,v in pairs(data[tostring(chat_id)]['banned']) do
-    message = message ..i.. '- '..check_markdown(v)..' [' ..k.. '] \n'
+    message = message ..i.. '- '..v..' [' ..k.. '] \n'
    i = i + 1
 end
   return message
@@ -573,7 +573,7 @@ local hash = "gp_lang:"..chat_id
 local lang = redis:get(hash)
     local data = load_data(_config.moderation.data)
     local i = 1
-  if not data[tostring(msg.chat_id_)] then
+  if not data[tostring(chat_id)] then
   if not lang then
     return '_Group is not added_'
 else
@@ -583,7 +583,7 @@ else
   -- determine if table is empty
   if next(data[tostring(chat_id)]['is_silent_users']) == nil then --fix way
         if not lang then
-					return "_No_ *silent* _users in this group_"
+					return "*No silent users in this group*"
    else
 					return "*لیست کاربران سایلنت شده خالی است*"
              end
@@ -594,7 +594,7 @@ else
    message = '_لیست کاربران سایلنت شده :_\n'
     end
   for k,v in pairs(data[tostring(chat_id)]['is_silent_users']) do
-    message = message ..i.. '- '..check_markdown(v)..' [' ..k.. '] \n'
+    message = message ..i.. '- '..v..' [' ..k.. '] \n'
    i = i + 1
 end
   return message
@@ -611,7 +611,7 @@ local lang = redis:get(hash)
   end
   if next(data['gban_users']) == nil then --fix way
     if not lang then
-					return "_No_ *globally banned* _users available_"
+					return "*No globally banned users available*"
    else
 					return "*هیچ کاربری از گروه های ربات محروم نشده*"
              end
@@ -622,7 +622,7 @@ local lang = redis:get(hash)
    message = '_لیست کاربران محروم شده از گروه های ربات :_\n'
    end
   for k,v in pairs(data['gban_users']) do
-    message = message ..i.. '- '..check_markdown(v)..' [' ..k.. '] \n'
+    message = message ..i.. '- '..v..' [' ..k.. '] \n'
    i = i + 1
 end
   return message
@@ -646,7 +646,7 @@ else
   -- determine if table is empty
   if next(data[tostring(msg.chat_id_)]['filterlist']) == nil then --fix way
       if not lang then
-    return "*Filtered words list* _is empty_"
+    return "*Filtered words list is empty*"
       else
     return "_لیست کلمات فیلتر شده خالی است_"
      end

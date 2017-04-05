@@ -234,7 +234,7 @@ if matches[1] == 'voice' then
       return nil
       else
   local url = "http://tts.baidu.com/text2audio?lan=en&ie=UTF-8&text="..textc
-  local file = download_to_file(url,'BD-Reborn.mp3')
+  local file = download_to_file(url,'OctaBot.mp3')
  				tdcli.sendDocument(msg.to.id, 0, 0, 1, nil, file, '@OctaCH', dl_cb, nil)
    end
 end
@@ -315,7 +315,7 @@ local hash = "gp_lang:"..msg.to.id
 local lang = redis:get(hash)
 if not lang then
 helpfun = [[
-_Beyond Reborn Fun Help Commands:_
+_Octa Reborn Fun Help Commands:_
 
 *!time*
 _Get time in a sticker_

@@ -636,7 +636,7 @@ if is_sudo(msg) then
 					redis:set('CheckExpire::'..msg.to.id,true)
 				end
 				if lang then
-					tdcli.sendMessage(SUDO, 0, 1, 'ربات در گروه '..matches[2]..' به مدت '..matches[3]..' روز تمدید گردید.', 1, 'md')
+					tdcli.sendMessage(SUDO, 0, 1, 'ربات در گروه '..matches[3]..' به مدت '..matches[2]..' روز تمدید گردید.', 1, 'md')
 					tdcli.sendMessage(matches[2], 0, 1, 'ربات توسط ادمین به مدت `'..matches[3]..'` روز شارژ شد\nبرای مشاهده زمان شارژ گروه دستور /check استفاده کنید...',1 , 'md')
 				else
 					tdcli.sendMessage(SUDO, 0, 1, '*Recharged successfully in the group:* `'..matches[2]..'`\n_Expire Date:_ `'..matches[3]..'` *Day(s)*', 1, 'md')
@@ -897,10 +897,10 @@ end
 				end
 				if lang then
 					tdcli.sendMessage(msg.to.id, msg.id_, 1, 'ربات با موفقیت تنظیم شد\nمدت فعال بودن ربات در گروه به '..matches[2]..' روز دیگر تنظیم شد...', 1, 'md')
-					tdcli.sendMessage(SUDO, 0, 1, 'ربات در گروه '..matches[2]..' به مدت `'..msg.to.id..'` روز تمدید گردید.', 1, 'md')
+					tdcli.sendMessage(SUDO, 0, 1, 'ربات در گروه '..msg.to.id..' به مدت `'..matches[2]..'` روز تمدید گردید.', 1, 'md')
 				else
 					tdcli.sendMessage(msg.to.id, msg.id_, 1, 'ربات با موفقیت تنظیم شد\nمدت فعال بودن ربات در گروه به '..matches[2]..' روز دیگر تنظیم شد...', 1, 'md')
-					tdcli.sendMessage(SUDO, 0, 1, 'ربات در گروه '..matches[2]..' به مدت `'..msg.to.id..'` روز تمدید گردید.', 1, 'md')
+					tdcli.sendMessage(SUDO, 0, 1, 'ربات در گروه '..msg.to.id..' به مدت `'..matches[2]..'` روز تمدید گردید.', 1, 'md')
 				end
 			else
 				if lang then
@@ -1192,7 +1192,7 @@ if matches[1] == "helptools" and is_mod(msg) then
 if not lang then
 text = [[
 
-_Sudoer And Admins Beyond Bot Help :_
+_Sudoer And Admins Octa Bot Help :_
 
 *!visudo* `[username|id|reply]`
 _Add Sudo_
